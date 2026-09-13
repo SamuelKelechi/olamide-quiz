@@ -1,69 +1,58 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+
+import "./globals.css";
+import { useRouter } from "next/navigation";
 
 export default function Home() {
+  const router = useRouter();
+
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>
-            To get started, edit the{" "}
-            <code className={styles.code}>page.tsx</code> file.
-          </h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main className="home-page">
+      <div className="quiz-card">
+        <div className="quiz-logo">
+          O
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <p className="eyebrow">OLAMIDE'S WEEKLY QUIZ</p>
+        <h1>
+          Hi, Olamide!
+          <span>Ready to learn?</span>
+        </h1>
+
+        <p className="intro">
+          Let's see how much you remember from your Beginner Computer
+          Studies this week. Take your time, think carefully, and do your best!
+        </p>
+
+        <div className="quiz-info">
+          <div>
+            <strong>20</strong>
+            <span>Questions</span>
+          </div>
+
+          <div>
+            <strong>20</strong>
+            <span>Minutes</span>
+          </div>
+
+          <div>
+            <strong>100%</strong>
+            <span>Challenge</span>
+          </div>
         </div>
-      </main>
-    </div>
+
+        <button
+          className="start-button"
+          onClick={() => router.push("/quiz")}
+        >
+          Start Quiz
+          <span>→</span>
+        </button>
+
+        <p className="footer-text">
+          New questions every week
+        </p>
+      </div>
+    </main>
   );
 }
