@@ -31,7 +31,7 @@ export default function Home() {
           </div>
 
           <div>
-            <strong>20</strong>
+            <strong>10</strong>
             <span>Minutes</span>
           </div>
 
